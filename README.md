@@ -39,7 +39,7 @@ The application provides real-time weather data, a 24-hour forecast, and an inte
 ## 🚀 Run Locally
 
 ```bash
-git clone https://github.com/yourusername/weather-viewer.git
+git clone https://github.com/Dom5inik/weather-viewer.git
 cd weather-viewer
 dotnet run
 ```
