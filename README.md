@@ -1,5 +1,7 @@
 # Weather Viewer
 
+![Weather Viewer Preview](screenshots/app-preview.png)
+
 A modern, desktop **weather application** built with WPF and .NET.
 The application provides real-time weather data, a 24-hour forecast, and an interactive precipitation radar, all wrapped in a sleek, glassmorphic UI with automatic localization.
 
