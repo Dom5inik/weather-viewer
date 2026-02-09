@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>RainViewer Radar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body,
+        html,
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map;
+        var radarLayer;
+
+        function initMap(lat, lon) {
+            if (map != undefined) {
+                map.panTo([lat, lon]);
+                return;
+            }
+
+            map = L.map('map', {
+                center: [lat, lon],
+                zoom: 7,
+                zoomControl: false,
+                attributionControl: false
+            });
+
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                opacity: 0.6
+            }).addTo(map);
+        }
+
+        function updateRadar(timestamp) {
+            if (!map) return;
+            if (radarLayer) {
+                map.removeLayer(radarLayer);
+            }
+
+            if (!timestamp) return;
+
+            radarLayer = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/' + timestamp + '/256/{z}/{x}/{y}/2/1_1.png', {
+                opacity: 0.8,
+                zIndex: 10
+            }).addTo(map);
+        }
+    </script>
+</body>
+
+</html>

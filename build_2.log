@@ -1,0 +1,11 @@
+﻿  Trwa okre┼Ťlanie projekt├│w do przywr├│cenia...
+  Wszystkie projekty s─ů aktualne na potrzeby przywr├│cenia.
+D:\Projekty IT\weather-viewer\MainWindow.xaml(163,36): error MC1000: Nieznany b┼é─ůd kompilacji, ÔÇ×Value cannot be null. (Parameter 'key') Wiersz 163 Pozycja 36.ÔÇŁ  [D:\Projekty IT\weather-viewer\WeatherViewer.csproj]
+
+Kompilacja NIE POWIOD┼üA SI─ś.
+
+D:\Projekty IT\weather-viewer\MainWindow.xaml(163,36): error MC1000: Nieznany b┼é─ůd kompilacji, ÔÇ×Value cannot be null. (Parameter 'key') Wiersz 163 Pozycja 36.ÔÇŁ  [D:\Projekty IT\weather-viewer\WeatherViewer.csproj]
+    Ostrze┼╝enia: 0
+    Liczba b┼é─Öd├│w: 1
+
+Czas, kt├│ry up┼éyn─ů┼é: 00:00:00.67

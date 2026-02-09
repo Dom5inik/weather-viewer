@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>RainViewer Radar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <style>
+        body,
+        html,
+        #map {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        var map;
+        var radarLayer;
+
+        function initMap(lat, lon) {
+            if (map != undefined) {
+                map.setView([lat, lon], 7);
+                return;
+            }
+
+            map = L.map('map', {
+                center: [lat, lon],
+                zoom: 7,
+                zoomControl: false,
+                attributionControl: false,
+                background: 'transparent' // Try to keep it blended
+            });
+
+            // Base layer (optional, can be dark matter or similar for weather widget look)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                opacity: 0.6
+            }).addTo(map);
+
+            // Initial radar load
+            updateRadar(Math.floor(Date.now() / 1000)); // Default to now
+        }
+
+        function updateRadar(timestamp) {
+            if (radarLayer) {
+                map.removeLayer(radarLayer);
+            }
+
+            // RainViewer Tiles
+            // https://tilecache.rainviewer.com/v2/radar/{ts}/{size}/{z}/{x}/{y}/{color}/{smooth}_{snow}.png
+            // strict timestamps usually required. For simplicity, we might need recent valid timestamps from API.
+            // But if specific timestamp passed from C#, we use it.
+
+            // Note: In a real app we need valid timestamps from the API. 
+            // The C# side sends the timestamp.
+
+            radarLayer = L.tileLayer('https://tilecache.rainviewer.com/v2/radar/' + timestamp + '/256/{z}/{x}/{y}/2/1_1.png', {
+                opacity: 0.8,
+                zIndex: 10
+            }).addTo(map);
+        }
+
+        // Initialize with default (will be called from C# with actual location)
+        initMap(52.2297, 21.0122); 
+    </script>
+</body>
+
+</html>

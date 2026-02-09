@@ -1,0 +1,11 @@
+﻿  Trwa okre┼Ťlanie projekt├│w do przywr├│cenia...
+  Wszystkie projekty s─ů aktualne na potrzeby przywr├│cenia.
+D:\Projekty IT\weather-viewer\MainWindow.xaml(80,29): error MC3072: W┼éa┼Ťciwo┼Ť─ç ÔÇ×PaddingÔÇŁ nie istnieje w przestrzeni nazw XML ÔÇ×http://schemas.microsoft.com/winfx/2006/xaml/presentationÔÇŁ. Wiersz 80 Pozycja 29. [D:\Projekty IT\weather-viewer\WeatherViewer.csproj]
+
+Kompilacja NIE POWIOD┼üA SI─ś.
+
+D:\Projekty IT\weather-viewer\MainWindow.xaml(80,29): error MC3072: W┼éa┼Ťciwo┼Ť─ç ÔÇ×PaddingÔÇŁ nie istnieje w przestrzeni nazw XML ÔÇ×http://schemas.microsoft.com/winfx/2006/xaml/presentationÔÇŁ. Wiersz 80 Pozycja 29. [D:\Projekty IT\weather-viewer\WeatherViewer.csproj]
+    Ostrze┼╝enia: 0
+    Liczba b┼é─Öd├│w: 1
+
+Czas, kt├│ry up┼éyn─ů┼é: 00:00:00.67
